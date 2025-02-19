@@ -26,7 +26,7 @@ const BarraLateral = () => {
                     <ItemNavegacao
                         iconeAtivo="public\icones\mais-vistas-ativo.png"
                         iconeInativo="public\icones\mais-vistas-inativo.png"
-                        ativo
+                        
                     >
                         Mais vistas
                     </ItemNavegacao>
@@ -34,7 +34,7 @@ const BarraLateral = () => {
                     <ItemNavegacao
                         iconeAtivo="public\icones\mais-curtidas-ativo.png"
                         iconeInativo="public\icones\mais-curtidas-inativo.png"
-                        ativo
+                        
                     >
                         Mais curtidas
                     </ItemNavegacao>
@@ -42,7 +42,7 @@ const BarraLateral = () => {
                     <ItemNavegacao
                         iconeAtivo="public\icones\novas-ativo.png"
                         iconeInativo="public\icones\novas-inativo.png"
-                        ativo
+                        
                     >
                         Novas
                     </ItemNavegacao>
@@ -50,7 +50,7 @@ const BarraLateral = () => {
                     <ItemNavegacao
                         iconeAtivo="public\icones\surpreenda-me-ativo.png"
                         iconeInativo="public\icones\surpreenda-me-inativo.png"
-                        ativo
+                        
                     >
                         Surpreenda-me
                     </ItemNavegacao>
