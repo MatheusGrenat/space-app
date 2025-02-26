@@ -3,6 +3,7 @@ import EstilosGlobais from "./componentes/EstilosGlobais/Index"
 import Cabecalho from "./componentes/Cabecalho"
 import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
+import Galeria from "./componentes/Galeria"
 
 
 const FundoGradiente = styled.div`
@@ -11,14 +12,38 @@ const FundoGradiente = styled.div`
   min-height: 100vh;
 `
 
+const AppContainer = styled.div`
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+`
+const MainContainer = styled.main`
+  display: flex;
+  gap: 24px;
+
+`
+const ConteudoDaGaleria = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`
+
+
 function App() {
 
   return (
     <FundoGradiente>
       <EstilosGlobais />
-      <Cabecalho />
-      <BarraLateral />
-      <Banner /> 
+      <AppContainer>
+        <Cabecalho />
+        <MainContainer>
+          <BarraLateral />
+          <ConteudoDaGaleria>
+            <Banner />
+            <Galeria />
+          </ConteudoDaGaleria>
+        </MainContainer>
+      </AppContainer> 
     </FundoGradiente>
   )
 }

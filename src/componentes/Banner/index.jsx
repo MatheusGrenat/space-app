@@ -2,20 +2,24 @@ import styled from "styled-components"
 
 const BannerEstilizado = styled.div`
     background-image: url('./imagens/foto-destaque.png');
-    min-width: 1156px;
-    min-height: 328px;
+    flex-grow: 1;
     background-repeat: no-repeat;
+    min-height: 328px;
+    display: flex;
+    margin: 0;
     border-radius: 20px;
     overflow: hidden;
     margin-left: 20px;
+    background-size: cover;
 `
-const ParagrafoEstilizado = styled.p`
-    color: #ffffff;
+const ParagrafoEstilizado = styled.h1`
+    font-weight: 400;
     font-size: 40px;
-    padding-left: 64px;
+    color: #ffffff;
+    padding:0 64px;
     padding-top: 92px;
-    max-width: 301px;
     margin: 0%;
+    max-width: 301px;
     font-family : GandhiSansRegular;
 `
 
