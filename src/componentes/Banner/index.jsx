@@ -9,7 +9,6 @@ const BannerEstilizado = styled.div`
     margin: 0;
     border-radius: 20px;
     overflow: hidden;
-    margin-left: 20px;
     background-size: cover;
 `
 const ParagrafoEstilizado = styled.h1`
