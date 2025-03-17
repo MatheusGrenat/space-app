@@ -8,6 +8,7 @@ const TagsEstilizadas = styled.button`
     border: none;
     border-radius: 15px;
     text-decoration: none;
+    cursor: pointer;
 `
 
 const SessaoEstilizada = styled.section`

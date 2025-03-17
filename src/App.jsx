@@ -6,6 +6,7 @@ import Banner from "./componentes/Banner"
 import Galeria from "./componentes/Galeria"
 
 import fotos from "./fotos.json" 
+import { useState } from "react"
 
 
 const FundoGradiente = styled.div`
@@ -31,8 +32,9 @@ const ConteudoDaGaleria = styled.section`
 `
 
 
-function App() {
+const App = () =>  {
 
+  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos)  
   return (
     <FundoGradiente>
       <EstilosGlobais />
@@ -42,7 +44,7 @@ function App() {
           <BarraLateral />
           <ConteudoDaGaleria>
             <Banner />
-            <Galeria />
+            <Galeria fotos={fotosDaGaleria}/>
           </ConteudoDaGaleria>
         </MainContainer>
       </AppContainer> 
