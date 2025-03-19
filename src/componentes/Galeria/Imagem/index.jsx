@@ -3,16 +3,22 @@ import fotos from "../../../fotos.json"
 const Imagem = ({ foto }) => {
     return(
         <figure>
-            <img></img>
-            <figcaption>
+            
+            {fotos.map(foto => (
+            <div>
+                <img 
+                    key={foto.id}
+                    src={foto.path}
+                    alt={foto.titulo}
+                />
+                    <h3>{foto.titulo}</h3>
+                    <h4>{foto.fonte}</h4>
                 <footer>
-                    <p></p>
-                    <h3>{fotos.map(foto => foto.titulo)}</h3>
-                    <h4>{fotos.map(foto => foto.fonte)}</h4>
                     <button>Favorito</button>
                     <button>Expandir</button>
                 </footer>
-            </figcaption>
+            </div>
+            ))}
         </figure>
     )
 } 
