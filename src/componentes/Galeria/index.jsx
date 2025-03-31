@@ -6,6 +6,7 @@ import Imagem from "./Imagem"
 
 const GaleriaContainer = styled.div`
     display: flex;
+    
 `
 
 const SecaoFluida = styled.section`
@@ -17,7 +18,6 @@ const Galeria = ({fotos = [] }) => {
     return(
         <>
             <Tags />
-            
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>Navegue pela galeria</Titulo>
