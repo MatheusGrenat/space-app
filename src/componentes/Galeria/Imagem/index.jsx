@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import fotos from "../../../fotos.json"
+import { useState } from "react"
 
 const FigureEstilizado = styled.figure`
     margin: 0;
@@ -8,7 +9,6 @@ const FigureEstilizado = styled.figure`
     flex-wrap: wrap;
     width: 944px;
 `
-
 const DivCard = styled.div`
     display: flex;
     flex-direction: column;
@@ -17,7 +17,6 @@ const DivCard = styled.div`
     padding-bottom: 24px;
     flex: 0 0 48%;
 `
-
 const FooterEstilizado = styled.footer`
     background-color: #001634;
     max-width: 426px;
@@ -28,7 +27,6 @@ const FooterEstilizado = styled.footer`
 const ImagemEstilizada = styled.img`
     border-radius: 20px 20px 0 0;
 `
-
 const H3Estilizado = styled.h3`
     color: white;
     margin: 0;    
@@ -43,10 +41,8 @@ const DivBotao = styled.div`
     gap: 24px;
     margin: 0 16px 0 0 ;
 `
-
-
-const BotaoFavorito = styled.button`
-    background-image: url('/icones/favorito.png');
+const BotaoFavoritoEstilizado = styled.button`
+    background-image: ${ props => props.$ativo ? "url('/icones/favorito-ativo.png')" : "url('/icones/favorito.png')"};
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -68,8 +64,8 @@ const BotaoExpandir = styled.button`
     border: none;
     cursor: pointer;
     padding: 0;
+    
 `
-
 const H4Estilizado = styled.h4`
     color: white;
     margin: 0;
@@ -77,11 +73,21 @@ const H4Estilizado = styled.h4`
 `
 
 
-const Imagem = ({ foto }) => {
+const Imagem = ({ foto, ativo = false}) => {
+    
+    const [botoesAtivos, setBotoesAtivos] = useState({});
+    const toggleAtivo = (id) => {
+        setBotoesAtivos(prev => ({
+            ...prev,
+            [id]: !prev[id]
+        }));
+    };
+    
+    
     return(
         <FigureEstilizado>
             {fotos.map(foto => (
-            <DivCard>
+            <DivCard key={foto.id}>
                 <ImagemEstilizada 
                     key={foto.id}
                     src={foto.path}
@@ -92,8 +98,11 @@ const Imagem = ({ foto }) => {
                     <DivFooter>
                         <H4Estilizado>{foto.fonte}</H4Estilizado>
                         <DivBotao>    
-                            <BotaoFavorito />
-                            <BotaoExpandir />
+                            <BotaoFavoritoEstilizado 
+                                $ativo={botoesAtivos[foto.id] || false}
+                                onClick={() => toggleAtivo(foto.id)}    
+                            />
+                            <BotaoExpandir $ativo={ativo}/>
                         </DivBotao>
                     </DivFooter>
                 </FooterEstilizado>
